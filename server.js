@@ -1,11 +1,14 @@
 var express = require('express'),
 	app = express(),
 	config = require('./config.js'),
-	mongoose = require('mongoose');
+	mongoose = require('mongoose'),
+	bodyParser = require('body-parser');
 
 mongoose.connect(config.db);
 
 app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.locals.pretty = true;
 
 var	appRoutes = require('./app/routes/appRouter.js')(app, express, __dirname),
@@ -15,7 +18,7 @@ app.use('/', appRoutes);
 app.use('/api', apiRoutes);
 
 app.get('*', function (req, res) {
-	res.sendFile(__dirname + '/public/views/404.html');
+	res.sendFile(__dirname + '/public/views/index.html');
 });
 
 app.listen(config.port);

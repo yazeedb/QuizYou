@@ -1,0 +1,26 @@
+<form action="/api/create" method="POST">
+	<div class="form-group">
+		<label for="">Your name
+			<input type="text" name="author">
+		</label>
+	</div>
+	<div class="form-group">
+		<label>Quiz Name
+			<input type="text" name="quizName">
+		</label>
+	</div>
+	<div class="form-group">
+		<label>Question
+			<input type="text" name="question">
+		</label>
+	</div>
+	<div class="form-group">
+		<label>Answers
+			<input type="text" placeholder="Correct answer" name="correctAns" class="form-control">
+			<input type="text" name="wrongAns1" class="form-control" placeholder="Wrong answer 1">
+			<input type="text" name="wrongAns2" class="form-control" placeholder="Wrong answer 2">
+			<input type="text" name="wrongAns3" class="form-control" placeholder="Wrong answer 3">
+		</label>
+	</div>
+	<button ng-submit="createQuiz()">Add Question</button>
+</form>

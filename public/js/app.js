@@ -1,1 +1,1 @@
-var quizYou = angular.module('quizYou', ['ui.router']);
+var quizYou = angular.module('quizYou', ['ui.router', 'ngResource']);
