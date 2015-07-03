@@ -3,13 +3,9 @@ function quizToDb (newQuiz) {
 		quiz = new Quiz();
 
 	quiz.author = newQuiz.author;
-	quiz.title = newQuiz.quizName;
+	quiz.title = newQuiz.title;
 
-	quiz.questions = [{
-		question: newQuiz.question,
-		choices: [newQuiz.correctAns, newQuiz.wrongAns1, newQuiz.wrongAns2, newQuiz.wrongAns3],
-		correctAnswer: newQuiz.correctAns
-	}];
+	quiz.questions = newQuiz.questions;
 
 	quiz.save(function (err, saved) {
 		if (err)

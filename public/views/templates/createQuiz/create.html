@@ -1,13 +1,11 @@
 <div class="form-group">
 	<label for="author">Author</label>
-	<input type="text" name="author" id="author" class="form-control" ng-model="cqCtrl.formData.author">
+	<input type="text" name="author" id="author" class="form-control" ng-model="cqCtrl.quiz.author">
 </div>
 
 <div class="form-group">
 	<label for="title">Quiz title</label>
-	<input type="text" name="title" id="title" class="form-control" ng-model="cqCtrl.formData.title">
+	<input type="text" name="title" id="title" class="form-control" ng-model="cqCtrl.quiz.title">
 </div>
 
-<a ui-sref="create.questions" class="btn btn-block btn-info">
-Next Section 
-</a>
+<a ui-sref="create.addQuestion" class="btn btn-info">Next</a>

@@ -20,10 +20,11 @@ module.exports = function (app, express) {
 		res.json(req.params);
 	});
 
-	api.post('/create', function (req, res) {
+	api.post('/upload', function (req, res) {
 		var quizToDb = require('../controllers/quizToDb.js');
-
-		res.redirect('/create');
+		
+		if (quizToDb(req.body.quiz))
+			return true;
 	});
 
 	api.get('*', function (req, res) {

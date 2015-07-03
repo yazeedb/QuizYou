@@ -1,13 +1,15 @@
 quizYou.config(['$urlRouterProvider', '$stateProvider', '$locationProvider', function ($urlRouterProvider, $stateProvider, $locationProvider) {
+	
+	$urlRouterProvider.when('', '/');
 
 	$stateProvider
-
 	.state('home', {
 		url: '/',
 		templateUrl: './views/templates/home.html'
 	})
 
 	.state('create', {
+		abstract: true,
 		url: '/create',
 		templateUrl: './views/templates/form.html',
 		controller: 'createQuizController',
@@ -15,13 +17,18 @@ quizYou.config(['$urlRouterProvider', '$stateProvider', '$locationProvider', fun
 	})
 
 	.state('create.name', {
-		url: '/name',
+		url: '',
 		templateUrl: './views/templates/createQuiz/create.html'
 	})
 
-	.state('create.questions', {
-		url: '/quiz',
-		templateUrl: './views/templates/createQuiz/newQuiz.html'
+	.state('create.addQuestion', {
+		url: '/addQuestion',
+		templateUrl: './views/templates/createQuiz/addQuestion.html'
+	})
+
+	.state('create.uploadQuiz', {
+		url: '/upload',
+		templateUrl: './views/templates/createQuiz/upload.html'
 	})
 
 	.state('allQuizzes', {

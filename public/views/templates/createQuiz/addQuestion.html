@@ -1,0 +1,16 @@
+<div class="form-group">
+	<label for="question">Question</label>
+	<input type="text" id="question" class="form-control" ng-model="cqCtrl.currentQ.question">
+</div>
+
+<div class="form-group">
+	<label for="correctAns">Answers</label>
+
+	<input type="text" id="correctAns" placeholder="Correct answer" ng-model="cqCtrl.currentQ.correctAnswer">
+	<input type="text" placeholder="Wrong answer 1" ng-model="cqCtrl.currentQ.choices[0]">
+	<input type="text" placeholder="Wrong answer 2" ng-model="cqCtrl.currentQ.choices[1]">
+	<input type="text" placeholder="Wrong answer 3" ng-model="cqCtrl.currentQ.choices[2]">
+</div>
+
+<a class="btn btn-info" ng-click="cqCtrl.appendToQuiz()">Add Question</a>
+<a ng-click="cqCtrl.uploadQuiz()">Finish Quiz</a>

@@ -3,7 +3,7 @@ var mongoose = require('mongoose'),
 
 var quizSchema = new Schema({
 	author: String,
-	name: String,
+	title: String,
 	questions: [{
 		question: String,
 		choices: [String],

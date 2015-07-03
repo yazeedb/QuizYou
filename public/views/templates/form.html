@@ -1,6 +1,11 @@
-<a ui-sref=".name"><h1>This is the form</h1></a>
-<form method="POST" ng-submit="cqctrl.processForm()">
+<ul class="nav nav-pills">
+	<li role="presentation"><a ui-sref=".name">Name it</a></li>
+	<li role="presentation"><a ui-sref=".addQuestion">Question it</a></li>
+	<li role="presentation"><a ui-sref=".done">Finish it</a></li>
+</ul>	
+<form method="POST">
 	<div ui-view></div>
 </form>
 
-{{cqCtrl.formData}}
+<pre>{{cqCtrl.quiz}}</pre>
+<pre>{{cqCtrl.currentQ}}</pre>
