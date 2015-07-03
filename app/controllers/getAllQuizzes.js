@@ -1,17 +1,7 @@
-var Q = require('q'),
-	deferred = Q.defer();
-
-function getAllQuizzes () {
+function getAllQuizzes (callback) {
 	var Quiz = require('../models/quiz.js');
 
-	Quiz.find({}, function (err, quizzes) {
-		if (err)
-			deferred.reject(err);
-		else
-			deferred.resolve(quizzes);
-	});
-
-	return deferred.promise;
+	return Quiz.find({});
 }
 
 module.exports = getAllQuizzes;

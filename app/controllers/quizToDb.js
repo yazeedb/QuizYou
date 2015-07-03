@@ -3,7 +3,7 @@ function quizToDb (newQuiz) {
 		quiz = new Quiz();
 
 	quiz.author = newQuiz.author;
-	quiz.name = newQuiz.quizName;
+	quiz.title = newQuiz.quizName;
 
 	quiz.questions = [{
 		question: newQuiz.question,

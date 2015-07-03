@@ -8,9 +8,12 @@ module.exports = function (app, express) {
 	api.get('/quizzes', function (req, res) {
 		var getAllQuizzes = require('../controllers/getAllQuizzes.js');
 
-		getAllQuizzes().then(function (quizzes) {
-			res.json(quizzes);
-		});	
+		getAllQuizzes().exec(function (err, quizzes) {
+			if (err)
+				return err;			
+
+			return res.json(quizzes);
+		});
 	});
 
 	api.get('/quizzes/:id', function (req, res) {
