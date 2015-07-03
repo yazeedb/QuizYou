@@ -1,6 +1,4 @@
 quizYou.config(['$urlRouterProvider', '$stateProvider', '$locationProvider', function ($urlRouterProvider, $stateProvider, $locationProvider) {
-	
-	$urlRouterProvider.when('', '/');
 
 	$stateProvider
 	.state('home', {
@@ -31,7 +29,7 @@ quizYou.config(['$urlRouterProvider', '$stateProvider', '$locationProvider', fun
 		templateUrl: './views/templates/createQuiz/upload.html'
 	})
 
-	.state('allQuizzes', {
+	.state('quizzes', {
 		url: '/quizzes',
 		templateUrl: './views/templates/quizzes.html',
 		controller: 'quizzesController',

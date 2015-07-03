@@ -23,8 +23,7 @@ module.exports = function (app, express) {
 	api.post('/upload', function (req, res) {
 		var quizToDb = require('../controllers/quizToDb.js');
 		
-		if (quizToDb(req.body.quiz))
-			return true;
+		quizToDb(req.body.quiz);
 	});
 
 	api.get('*', function (req, res) {

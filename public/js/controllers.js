@@ -1,14 +1,12 @@
 //Create a quiz
-quizYou.controller('createQuizController', ['$http', function ($http) {
+quizYou.controller('createQuizController', ['$http', '$state', 'quizService', function ($http, $state, quizService) {
 	var self = this;
 
-	self.quiz = {
-		author: '',
-		title: '',
-		questions: []
-	}
-	
-	self.currentQ = {
+	//Create a new quiz object. This will hold all final quiz data, and will be sent to the database at the end
+	self.quiz = quizService.newQuiz();
+
+	//This object will track the current question our user is filling out. Once they add a new question or submit the form, this object will be saved to our self.quiz.questions array
+	self.current = {
 		question: '',
 		choices: [],
 		correctAnswer: ''
@@ -16,44 +14,28 @@ quizYou.controller('createQuizController', ['$http', function ($http) {
 
 	//Add current question to quiz questions array
 	self.appendToQuiz = function () {
-		self.currentQ.choices.push(self.currentQ.correctAnswer);
-
-		var q = {
-			question: self.currentQ.question,
-			choices: self.currentQ.choices,
-			correctAnswer: self.currentQ.correctAnswer
-		}; 
-
-		self.currentQ = {
-			question: '',
-			choices: [],
-			correctAnswer: ''
-		};
-
-		self.quiz.questions.push(q);
+		//Since quizService.appendToQuiz returns a new current question object, setting self.current equal to that will reset it. This will allow it to track the user's next question
+		self.current = quizService.appendToQuiz(self.current, self.quiz);
 	};
 
 	//Upload quiz to database
 	self.uploadQuiz = function () {
 		self.appendToQuiz();
-
-		var dbCall = $http.post('/api/upload', {quiz: self.quiz});
-		
-		dbCall.success(function (data, status, headers, config) {
-			console.log(data);
-			console.log(status);
-		})
-		.error(function (data, status) {
-			console.log(data);
-			console.log(status);
-		});
+		quizService.uploadQuiz(self.quiz);
 	};
 }]);
 
 
 //View all quizzes
-quizYou.controller('quizzesController', ['$resource', function ($resource) {
+quizYou.controller('quizzesController', ['$resource', 'quizService', function ($resource, quizService) {
 	var self = this;
 
-	self.quizzes = $resource('/api/quizzes').query();
+	var getQuizzes = quizService.getAllQuizzes();
+
+	getQuizzes.success(function (data, status) {
+		self.quizzes = data;
+	})
+	.error(function (error, status) {
+		return error;
+	});
 }]);
