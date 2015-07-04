@@ -27,15 +27,20 @@ quizYou.controller('createQuizController', ['$http', '$state', 'quizService', fu
 
 
 //View all quizzes
-quizYou.controller('quizzesController', ['$resource', 'quizService', function ($resource, quizService) {
+quizYou.controller('quizzesController', ['quizService', function (quizService) {
 	var self = this;
 
 	var getQuizzes = quizService.getAllQuizzes();
 
 	getQuizzes.success(function (data, status) {
+		console.log(data);
 		self.quizzes = data;
 	})
 	.error(function (error, status) {
 		return error;
 	});
+}]);
+
+quizYou.controller('playQuizController', [function () {
+
 }]);

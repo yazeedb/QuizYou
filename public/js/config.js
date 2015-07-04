@@ -34,6 +34,13 @@ quizYou.config(['$urlRouterProvider', '$stateProvider', '$locationProvider', fun
 		templateUrl: './views/templates/quizzes.html',
 		controller: 'quizzesController',
 		controllerAs: 'quizzesCtrl'
+	})
+
+	.state('play', {
+		url: '/quizzes/?_id',
+		templateUrl: './views/templates/quiz.html',
+		controller: 'playQuizController',
+		controllerAs: 'pqCtrl'
 	});
 
 	$urlRouterProvider.otherwise('/');

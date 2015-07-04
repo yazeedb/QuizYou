@@ -1,1 +1,6 @@
-<div>{{quizzesCtrl }}</div>
+<a href="/quizzes/{{ quiz._id }}"  ng-repeat="quiz in quizzesCtrl.quizzes">
+	<div class="quiz">
+		<h4 class="quizTitle">{{ quiz.title }}</h4>
+		<span>By {{ quiz.author }}</span>
+	</div>
+</a>
