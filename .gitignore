@@ -29,3 +29,6 @@ node_modules
 
 #Bower components
 public/bower_components
+
+#user uploaded images
+user_img

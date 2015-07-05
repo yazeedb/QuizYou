@@ -1,7 +1,8 @@
-<ul>
-	<li class="quiz" ng-repeat="quiz in quizzesCtrl.quizzes">
+<ul class="list-group">
+	<li class="list-group-item quiz" ng-repeat="quiz in quizzesCtrl.quizzes">
 		<a ui-sref="play({ _id: quiz._id })">
 			<h4 class="quizTitle">{{ quiz.title }}</h4>
+			<p>{{ quiz.desc }}</p>
 			<span class="quizAuthor">By {{ quiz.author }}</span>
 		</a>
 	</li>	

@@ -4,6 +4,7 @@ function quizToDb (newQuiz) {
 
 	quiz.author = newQuiz.author;
 	quiz.title = newQuiz.title;
+	quiz.desc = newQuiz.desc;
 	quiz.questions = newQuiz.questions;
 
 	quiz.save(function (err, saved) {

@@ -4,6 +4,7 @@ var mongoose = require('mongoose'),
 var quizSchema = new Schema({
 	author: String,
 	title: String,
+	desc: String,
 	questions: [{
 		question: String,
 		choices: [String],
