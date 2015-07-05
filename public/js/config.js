@@ -37,12 +37,12 @@ quizYou.config(['$urlRouterProvider', '$stateProvider', '$locationProvider', fun
 	})
 
 	.state('play', {
-		url: '/quizzes/?_id',
+		url: '/play/{_id}',
 		templateUrl: './views/templates/quiz.html',
 		controller: 'playQuizController',
 		controllerAs: 'pqCtrl'
 	});
 
 	$urlRouterProvider.otherwise('/');
-	$locationProvider.html5Mode(true);
+	//$locationProvider.html5Mode(true);
 }]);

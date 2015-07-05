@@ -1,6 +1,8 @@
-<a href="/quizzes/{{ quiz._id }}"  ng-repeat="quiz in quizzesCtrl.quizzes">
-	<div class="quiz">
-		<h4 class="quizTitle">{{ quiz.title }}</h4>
-		<span>By {{ quiz.author }}</span>
-	</div>
-</a>
+<ul>
+	<li class="quiz" ng-repeat="quiz in quizzesCtrl.quizzes">
+		<a ui-sref="play({ _id: quiz._id })">
+			<h4 class="quizTitle">{{ quiz.title }}</h4>
+			<span class="quizAuthor">By {{ quiz.author }}</span>
+		</a>
+	</li>	
+</ul>

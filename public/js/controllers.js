@@ -30,17 +30,34 @@ quizYou.controller('createQuizController', ['$http', '$state', 'quizService', fu
 quizYou.controller('quizzesController', ['quizService', function (quizService) {
 	var self = this;
 
+	//Retrieve all quizzes from the database
 	var getQuizzes = quizService.getAllQuizzes();
 
+	//If successful, assign self.quizzes to the incoming data
 	getQuizzes.success(function (data, status) {
 		console.log(data);
 		self.quizzes = data;
 	})
+	//Otherwise, return the error
 	.error(function (error, status) {
 		return error;
 	});
 }]);
 
-quizYou.controller('playQuizController', [function () {
+quizYou.controller('playQuizController', ['$state', 'quizService', function ($state, quizService) {
+	var self = this;
 
+	//Find the requested quiz in the database
+	//This will search using the quiz's _id, found in the $state.params object
+	var getOneQuiz = quizService.getOneQuiz($state.params._id);
+
+	//If successful, assign self.quiz to the incoming data
+	getOneQuiz.success(function (data, status) {
+		console.log(data);
+		self.quiz = data;
+	})
+	//Otherwise, return the error
+	.error(function (error, status) {
+		return error;
+	});
 }]);
