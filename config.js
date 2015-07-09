@@ -4,6 +4,8 @@ module.exports = {
 	multerConfig: {
 		onFileUploadStart: function (file) {
 			console.log('Uploading...');
-		}
+		},
+		
+		dest: './user_img'
 	}
 };

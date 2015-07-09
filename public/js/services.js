@@ -45,7 +45,7 @@ quizYou.service('quizService', ['$http', '$state', function ($http, $resource, $
 
 	this.uploadQuiz = function (quiz) {
 		//Make a POST request with our quiz data
-		var postQuizzes = $http.post('/api/upload', {quiz: quiz});
+		var postQuizzes = $http.post('/api/quizzes', {quiz: quiz});
 
 		//If all is well
 		postQuizzes.success(function (data) {

@@ -5,6 +5,8 @@ var quizSchema = new Schema({
 	author: String,
 	title: String,
 	desc: String,
+	imgPath: String,
+	
 	questions: [{
 		question: String,
 		choices: [String],
