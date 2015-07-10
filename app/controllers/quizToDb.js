@@ -1,11 +1,16 @@
 function quizToDb (newQuiz) {
 	var Quiz = require('../models/quiz.js'),
-		quiz = new Quiz();
+		quiz = new Quiz(),
+		key;
 
-	quiz.author = newQuiz.author;
+	/*quiz.author = newQuiz.author;
 	quiz.title = newQuiz.title;
 	quiz.desc = newQuiz.desc;
-	quiz.questions = newQuiz.questions;
+	quiz.questions = newQuiz.questions;*/
+
+	for(key in newQuiz) {
+		quiz[key] = newQuiz[key];
+	}
 
 	quiz.save(function (err, saved) {
 		if (err)

@@ -1,22 +1,16 @@
 <div class="form-group">
 	<label for="author">Author</label>
-	<input type="text" name="author" id="author" class="form-control" ng-model="cqCtrl.quiz.author">
+	<input type="text" name="author" id="author" class="form-control" ng-model="cqCtrl.quiz.author" required>
 </div>
 
 <div class="form-group">
 	<label for="title">Quiz title</label>
-	<input type="text" name="title" id="title" class="form-control" ng-model="cqCtrl.quiz.title">
+	<input type="text" name="title" id="title" class="form-control" ng-model="cqCtrl.quiz.title" required>
 </div>
 
 <div class="form-group">
 	<label for="desc">Description</label>
-	<textarea class="form-control" id="desc" ng-model="cqCtrl.quiz.desc"></textarea>
+	<textarea class="form-control" id="desc" ng-model="cqCtrl.quiz.desc" required></textarea>
 </div>
-
-<div class="form-group">
-	<label for="img">Image</label>
-	<input type="file" class="form-control" name="imgPath" id="img">
-</div>
-<input type="text" name="dirtbags">
 
 <a ui-sref="create.addQuestion" class="btn btn-info">Next</a>

@@ -1,0 +1,17 @@
+.wrapper ul.quizzes a:hover {
+  text-decoration: none;
+}
+.wrapper ul.quizzes a li {
+  margin: 0;
+  padding: 10px 15px;
+  color: #000000;
+}
+.wrapper ul.quizzes a li:hover {
+  background-color: #f5f5f5;
+}
+.wrapper ul.quizzes a li h4 {
+  margin: 0;
+}
+.wrapper ul.quizzes a li span {
+  font-style: italic;
+}
