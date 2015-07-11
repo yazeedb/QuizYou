@@ -16,4 +16,4 @@
 	<span class="form-error" ng-show="form.desc.$touched && form.desc.$invalid">Please enter a description</span>
 </div>
 
-<button class="btn btn-info" ng-disabled="form.$invalid" ng-click="form.$invalid || cqCtrl.validateQuiz(form.$valid, 'create.addQuestion')">Next</button>
+<button ui-sref="create.addQuestion" class="btn btn-info" ng-disabled="form.$invalid">Next</button>
