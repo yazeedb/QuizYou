@@ -1,16 +1,19 @@
 <div class="form-group">
 	<label for="author">Author</label>
 	<input type="text" name="author" id="author" class="form-control" ng-model="cqCtrl.quiz.author" required>
+	<span class="form-error" ng-show="form.author.$touched && form.author.$invalid">Please enter an author</span>
 </div>
 
 <div class="form-group">
 	<label for="title">Quiz title</label>
 	<input type="text" name="title" id="title" class="form-control" ng-model="cqCtrl.quiz.title" required>
+	<span class="form-error" ng-show="form.title.$touched && form.title.$invalid">Please enter a title</span>
 </div>
 
 <div class="form-group">
 	<label for="desc">Description</label>
-	<textarea class="form-control" id="desc" ng-model="cqCtrl.quiz.desc" required></textarea>
+	<textarea class="form-control" name="desc" id="desc" ng-model="cqCtrl.quiz.desc" required></textarea>
+	<span class="form-error" ng-show="form.desc.$touched && form.desc.$invalid">Please enter a description</span>
 </div>
 
-<a ui-sref="create.addQuestion" class="btn btn-info">Next</a>
+<button class="btn btn-info" ng-disabled="form.$invalid" ng-click="form.$invalid || cqCtrl.validateQuiz(form.$valid, 'create.addQuestion')">Next</button>

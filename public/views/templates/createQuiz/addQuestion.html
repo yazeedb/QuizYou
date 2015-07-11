@@ -1,16 +1,17 @@
 <div class="form-group">
 	<label for="question">Question</label>
-	<input type="text" id="question" class="form-control" ng-model="cqCtrl.current.question">
+	<input type="text" id="question" class="form-control" ng-model="cqCtrl.current.question" required>
 </div>
 
 <div class="form-group">
 	<label for="correctAns">Answers</label>
 
-	<input type="text" id="correctAns" placeholder="Correct answer" ng-model="cqCtrl.current.correctAnswer">
-	<input type="text" placeholder="Wrong answer 1" ng-model="cqCtrl.current.choices[0]">
-	<input type="text" placeholder="Wrong answer 2" ng-model="cqCtrl.current.choices[1]">
-	<input type="text" placeholder="Wrong answer 3" ng-model="cqCtrl.current.choices[2]">
+	<input type="text" id="correctAns" placeholder="Correct answer" ng-model="cqCtrl.current.correctAnswer" required>
+	<input type="text" placeholder="Wrong answer 1" ng-model="cqCtrl.current.choices[0]" required>
+	<input type="text" placeholder="Wrong answer 2" ng-model="cqCtrl.current.choices[1]" required>
+	<input type="text" placeholder="Wrong answer 3" ng-model="cqCtrl.current.choices[2]" required>
 </div>
 
-<a class="btn btn-info" ng-click="cqCtrl.appendToQuiz()">Add Question</a>
-<button type="submit" class="btn btn-success">Finish</button>
+<a class="btn btn-info" ng-disabled="form.$invalid" ng-click="form.$invalid || cqCtrl.appendToQuiz()">Add Question</a>
+
+<button type="submit" ng-disabled="form.$invalid" class="btn btn-success">Finish</button>

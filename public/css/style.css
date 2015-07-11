@@ -15,3 +15,11 @@
 .wrapper ul.quizzes a li span {
   font-style: italic;
 }
+.wrapper form input.ng-invalid.ng-touched,
+.wrapper form textarea.ng-invalid.ng-touched {
+  border: 1px solid #dd1e31;
+}
+.wrapper form .form-error {
+  color: #dd1e31;
+  font-family: Verdana;
+}

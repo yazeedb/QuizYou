@@ -1,4 +1,4 @@
-quizYou.config(['$urlRouterProvider', '$stateProvider', '$locationProvider', function ($urlRouterProvider, $stateProvider, $locationProvider) {
+quizYou.config(['$urlRouterProvider', '$stateProvider', function ($urlRouterProvider, $stateProvider) {
 
 	$stateProvider
 	.state('home', {
@@ -24,11 +24,6 @@ quizYou.config(['$urlRouterProvider', '$stateProvider', '$locationProvider', fun
 		templateUrl: './views/templates/createQuiz/addQuestion.html'
 	})
 
-	.state('create.uploadQuiz', {
-		url: '/upload',
-		templateUrl: './views/templates/createQuiz/upload.html'
-	})
-
 	.state('quizzes', {
 		url: '/quizzes',
 		templateUrl: './views/templates/quizzes.html',
@@ -42,7 +37,4 @@ quizYou.config(['$urlRouterProvider', '$stateProvider', '$locationProvider', fun
 		controller: 'playQuizController',
 		controllerAs: 'pqCtrl'
 	});
-
-	$urlRouterProvider.otherwise('/');
-	//$locationProvider.html5Mode(true);
 }]);

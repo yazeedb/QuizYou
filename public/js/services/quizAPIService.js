@@ -17,4 +17,4 @@ quizYou.service('quizAPIService', ['$http', function ($http){
 		//Make a POST request with our quiz data
 		return $http.post('/api/quizzes', {quiz: quiz});
 	};
-}])
+}]);

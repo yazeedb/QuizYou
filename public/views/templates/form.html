@@ -1,6 +1,5 @@
-<form method="POST" enctype="multipart/form-data" ng-submit="cqCtrl.uploadQuiz()">
+<form method="POST" name="form" ng-submit="cqCtrl.uploadQuiz()" novalidate>
 	<div ui-view></div>
-</div>
 </form>
 
 <pre>{{cqCtrl.quiz}}</pre>

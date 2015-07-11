@@ -1,5 +1,5 @@
 //Create a quiz
-quizYou.controller('createQuizController', ['$http', '$state', '$location', 'quizCreationService', 'quizAPIService', function ($http, $state, $location, quizCreationService, quizAPIService) {
+quizYou.controller('createQuizController', ['$http', '$state', '$location', 'quizCreationService', 'quizAPIService', 'validateFormService', function ($http, $state, $location, quizCreationService, quizAPIService, validateFormService) {
 	var self = this;
 
 	//Create a new quiz object. This will hold all final quiz data, and will be sent to the database at the end
@@ -13,6 +13,8 @@ quizYou.controller('createQuizController', ['$http', '$state', '$location', 'qui
 		//Since quizCreationService.appendToQuiz returns a new current question object, setting self.current equal to that will reset it. This will allow it to track the user's next question
 		self.current = quizCreationService.appendToQuiz(self.current, self.quiz);
 	};
+
+	self.validateQuiz = validateFormService.validateQuiz;
 
 	//Upload quiz to database
 	self.uploadQuiz = function () {
