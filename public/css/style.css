@@ -1,25 +1,64 @@
-.wrapper ul.quizzes a:hover {
+.navbar {
+  margin-bottom: 0;
+}
+.container-fluid ul.quizzes a:hover {
   text-decoration: none;
 }
-.wrapper ul.quizzes a li {
+.container-fluid ul.quizzes a li {
   margin: 0;
   padding: 10px 15px;
   color: #000000;
 }
-.wrapper ul.quizzes a li:hover {
+.container-fluid ul.quizzes a li:hover {
   background-color: #f5f5f5;
 }
-.wrapper ul.quizzes a li h4 {
+.container-fluid ul.quizzes a li h4 {
   margin: 0;
 }
-.wrapper ul.quizzes a li span {
+.container-fluid ul.quizzes a li span {
   font-style: italic;
 }
-.wrapper form input.ng-invalid.ng-touched,
-.wrapper form textarea.ng-invalid.ng-touched {
+.container-fluid .question-card {
+  border: 1px solid #dddddd;
+  border-radius: 10px 10px 0 0;
+  margin: 15px 0;
+}
+.container-fluid .question-card .title {
+  margin: 0;
+  padding: 15px 10px;
+  border-bottom: 1px solid #dddddd;
+}
+.container-fluid .question-card .choice-card {
+  background-color: #fafafa;
+  color: #a0a7ad;
+  padding: 15px;
+  border-bottom: 1px solid #dddddd;
+  cursor: pointer;
+}
+.container-fluid .question-card .choice-card:hover,
+.container-fluid .question-card .choice-card.active {
+  background-color: #ffffff;
+  color: #595c5e;
+}
+.container-fluid .question-card .answer-status {
+  color: #ffffff;
+  padding: 15px;
+}
+.container-fluid .question-card .answer-status span {
+  color: #ffffff;
+  font-weight: 700;
+}
+.container-fluid .question-card .answer-status.correct {
+  background-color: #3cba61;
+}
+.container-fluid .question-card .answer-status.wrong {
+  background-color: #ee5a5a;
+}
+.container-fluid form input.ng-invalid.ng-touched,
+.container-fluid form textarea.ng-invalid.ng-touched {
   border: 1px solid #dd1e31;
 }
-.wrapper form .form-error {
+.container-fluid form .form-error {
   color: #dd1e31;
   font-family: Verdana;
 }

@@ -1,8 +1,25 @@
+@white: #fff;
+
 @card-text-color: #000;
 @card-hover-bgColor: #f5f5f5;
 @form-error-text-color: #dd1e31;
 
-.wrapper {
+@card-border-color: #ddd;
+@card-background-color: #f5f5f5;
+
+@choice-background-color: #FAFAFA;
+@choice-color: #A0A7AD;
+@choice-color-hover: #595C5E;
+
+@answer-text-color: rgba(0, 0, 0, 0.44);
+@correct-answer-background: #3CBA61;
+@wrong-answer-background: #EE5A5A;
+
+.navbar {
+	margin-bottom: 0;
+}
+
+.container-fluid {
 	ul.quizzes {
 		a {
 			&:hover {
@@ -25,6 +42,49 @@
 				span {
 					font-style: italic;
 				}
+			}
+		}
+	}
+
+	.question-card {
+		border: 1px solid @card-border-color;
+		border-radius: 10px 10px 0 0;
+		margin: 15px 0;
+
+		.title {
+			margin: 0;
+			padding: 15px 10px;
+			border-bottom: 1px solid @card-border-color;
+		}
+
+		.choice-card {
+			background-color: @choice-background-color;
+			color: @choice-color;
+			padding: 15px;
+			border-bottom: 1px solid @card-border-color;
+			cursor: pointer;
+
+			&:hover, &.active {
+				background-color: @white;
+				color: @choice-color-hover;
+			}
+		}
+
+		.answer-status {
+			color: @white;
+			padding: 15px;
+
+			span {
+				color: @white;
+				font-weight: 700;
+			}
+
+			&.correct {
+				background-color: @correct-answer-background;
+			}
+
+			&.wrong {
+				background-color: @wrong-answer-background;
 			}
 		}
 	}
