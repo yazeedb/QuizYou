@@ -2,7 +2,7 @@
   text-decoration: none;
 }
 .container-fluid ul.quizzes a li {
-  margin: 0;
+  margin: 20px 0;
   padding: 10px 15px;
   color: #000000;
 }
@@ -23,13 +23,12 @@
 .container-fluid .question-card .title {
   margin: 0;
   padding: 15px 10px;
-  border-bottom: 1px solid #dddddd;
 }
 .container-fluid .question-card .choice-card {
   background-color: #fafafa;
   color: #a0a7ad;
   padding: 15px;
-  border-bottom: 1px solid #dddddd;
+  border-top: 1px solid #dddddd;
   cursor: pointer;
 }
 .container-fluid .question-card .choice-card:hover,
