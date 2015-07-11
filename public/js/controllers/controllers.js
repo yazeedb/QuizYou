@@ -9,8 +9,10 @@ quizYou.controller('createQuizController', ['$http', '$state', '$location', 'qui
 	self.current = quizCreationService.newQuestion();
 
 	//Add current question to quiz questions array
-	self.appendToQuiz = function () {
+	self.appendToQuiz = function (form) {
 		//Since quizCreationService.appendToQuiz returns a new current question object, setting self.current equal to that will reset it. This will allow it to track the user's next question
+
+		form.$setUntouched();
 		self.current = quizCreationService.appendToQuiz(self.current, self.quiz);
 	};
 
@@ -45,7 +47,6 @@ quizYou.controller('quizzesController', ['quizAPIService', function (quizAPIServ
 
 	//If successful, assign self.quizzes to the incoming data
 	getQuizzes.success(function (data, status) {
-		console.log(data);
 		self.quizzes = data;
 	})
 	//Otherwise, return the error

@@ -12,6 +12,6 @@
 	<input type="text" placeholder="Wrong answer 3" ng-model="cqCtrl.current.choices[2]" required>
 </div>
 
-<a class="btn btn-info" ng-disabled="form.$invalid" ng-click="form.$invalid || cqCtrl.appendToQuiz()">Add Question</a>
+<a class="btn btn-info" ng-disabled="form.$invalid" ng-click="form.$invalid || cqCtrl.appendToQuiz(form)">Add Question</a>
 
 <button type="submit" ng-disabled="form.$invalid" class="btn btn-success">Finish</button>
