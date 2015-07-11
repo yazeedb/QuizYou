@@ -11,8 +11,10 @@ quizYou.controller('createQuizController', ['$http', '$state', '$location', 'qui
 	//Add current question to quiz questions array
 	self.appendToQuiz = function (form) {
 		//Since quizCreationService.appendToQuiz returns a new current question object, setting self.current equal to that will reset it. This will allow it to track the user's next question
-
-		form.$setUntouched();
+		if (form) {
+			form.$setUntouched();
+		}
+		
 		self.current = quizCreationService.appendToQuiz(self.current, self.quiz);
 	};
 
