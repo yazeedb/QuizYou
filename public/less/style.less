@@ -1,48 +1,76 @@
 @white: #fff;
 
+@body-bg-color: #F5F7FB;
+
 @card-text-color: #000;
-@card-hover-bgColor: #f5f5f5;
+@card-border-color: #ddd;
+@card-title-color: #22c1e8;
+@card-desc-color: gray;
+@card-author-color: silver;
+@card-hover-bg-color: #f5f5f5;
 @form-error-text-color: #dd1e31;
 
-@card-border-color: #ddd;
+@card-border-color: #e3e6ec;
 @card-background-color: #f5f5f5;
 
-@choice-background-color: #FAFAFA;
-@choice-color: #A0A7AD;
-@choice-color-hover: #595C5E;
-
 @answer-text-color: rgba(0, 0, 0, 0.44);
-@correct-answer-background: #3CBA61;
-@wrong-answer-background: #EE5A5A;
+@correct-answer-background: #6ACE87;
+@wrong-answer-background: #FF7B7B;
 
 @nextQuestion-bg-color: #5cb4e7;
 @nextQuestion-bg-color-disabled: #96CDE6;
 
+
+html, body, .container-fullwidth {
+	height: 100%;
+}
 .container-fullwidth {
+	background-color: @body-bg-color;
+
+	nav {
+		background-color: @white;
+		border-color: @card-border-color;
+		border-radius: 0;
+
+		ul.nav {
+			&:visited {
+				background-color: @body-bg-color;
+			}
+		}
+	}
+
 	.main {
 		padding: 0 15px;
 
 		ul.quizzes {
 			a {
-				&:hover {
-					text-decoration: none;
-				}
+				text-decoration: none;
 
 				li {
+					width: 40%;
+					height: 100px;
+					color: @card-text-color;
 					margin: 20px 0;
 					padding: 10px 15px;
-					color: @card-text-color;
+					border-color: @card-border-color;
 
 					&:hover {
-						background-color: @card-hover-bgColor;
+						background-color: @card-hover-bg-color;
 					}
 
-					h4 {
+					.quizTitle {
 						margin: 0;
+						color: @card-title-color;
 					}
 
-					span {
+					.quizDesc {
+						color: @card-desc-color;
+					}
+
+					.quizAuthor {
+						color: @card-author-color;
 						font-style: italic;
+						line-height: 50px;
 					}
 				}
 			}
@@ -57,36 +85,29 @@
 				.title {
 					margin: 0;
 					padding: 15px 10px;
+
+					.answer-status {
+						margin-left: 12px;
+					}
+
+					&.correct {
+						background-color: @correct-answer-background;
+						color: @white;
+					}
+
+					&.incorrect {
+						background-color: @wrong-answer-background;
+						color: @white;
+					}
 				}
 
 				.choice-row {
-					background-color: @choice-background-color;
-					color: @choice-color;
 					padding: 15px;
 					border-top: 1px solid @card-border-color;
 					cursor: pointer;
 
 					&:hover, &.active {
-						background-color: @white;
-						color: @choice-color-hover;
-					}
-				}
-
-				.answer-status {
-					color: @white;
-					padding: 15px;
-
-					span {
-						color: @white;
-						font-weight: 700;
-					}
-
-					&.correct {
-						background-color: @correct-answer-background;
-					}
-
-					&.wrong {
-						background-color: @wrong-answer-background;
+						background-color: @card-hover-bg-color;
 					}
 				}
 			}
@@ -95,8 +116,10 @@
 				background-color: @nextQuestion-bg-color;
 				color: @white;
 				border: none;
-				padding: 8px;
+				margin-right: 15px;
+				padding: 12px;
 				border-radius: 3px;
+				float: right;
 
 				&:disabled {
 					background-color: @nextQuestion-bg-color-disabled;
@@ -118,7 +141,8 @@
 		}
 
 		pre {
-			margin-top: 20px;
+			margin-top: 90px;
+			clear: both;
 		}
 	}
 }

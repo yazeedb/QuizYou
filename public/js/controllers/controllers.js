@@ -86,6 +86,8 @@ quizYou.controller('playQuizController', ['$state', 'quizAPIService', 'playQuizS
 
 		//If submittedAnswer is correct, self.userCanAdvance will evaluate to true, and the user can move on
 		self.userCanAdvance = playQuizService.checkAnswer(submittedAnswer, correctAnswer);
+
+		self.wrongAnswer = !self.userCanAdvance;
 	};
 
 	self.nextQuestion = function () {
