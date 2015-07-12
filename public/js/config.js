@@ -26,7 +26,7 @@ quizYou.config(['$urlRouterProvider', '$stateProvider', function ($urlRouterProv
 
 	.state('quizzes', {
 		url: '/quizzes',
-		templateUrl: './views/templates/quizzes.html',
+		templateUrl: './views/templates/quizList.html',
 		controller: 'quizzesController',
 		controllerAs: 'quizzesCtrl'
 	})

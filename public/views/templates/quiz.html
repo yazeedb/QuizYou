@@ -1,11 +1,13 @@
-<div class="question-card">
-	<h4 class="title">{{ pqCtrl.quiz.questions[pqCtrl.currentQuestionIndex].question }}</h4>
+<div class="quiz">
+	<div class="question-card">
+		<h4 class="title">{{ pqCtrl.quiz.questions[pqCtrl.currentQuestionIndex].question }}</h4>
 
-	<div class="choice-row" ng-repeat="choice in pqCtrl.quiz.questions[pqCtrl.currentQuestionIndex].choices track by $index" ng-click="pqCtrl.checkAnswer($index)">
-		{{ choice }}
+		<div class="choice-row" ng-repeat="choice in pqCtrl.quiz.questions[pqCtrl.currentQuestionIndex].choices track by $index" ng-click="pqCtrl.checkAnswer($index)">
+			{{ choice }}
+		</div>
 	</div>
 
-	<button class="nextQuestion" ng-click="pqCtrl.nextQuestion()">Next question</button>
+	<button class="nextQuestion" ng-disabled="!pqCtrl.userCanAdvance" ng-click="pqCtrl.nextQuestion()">Next question</button>
 </div>
 
 <pre>{{ pqCtrl.quiz.questions }}</pre>

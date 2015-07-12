@@ -15,85 +15,110 @@
 @correct-answer-background: #3CBA61;
 @wrong-answer-background: #EE5A5A;
 
-.container-fluid {
-	ul.quizzes {
-		a {
-			&:hover {
-				text-decoration: none;
-			}
+@nextQuestion-bg-color: #5cb4e7;
+@nextQuestion-bg-color-disabled: #96CDE6;
 
-			li {
-				margin: 20px 0;
-				padding: 10px 15px;
-				color: @card-text-color;
+.container-fullwidth {
+	.main {
+		padding: 0 15px;
 
+		ul.quizzes {
+			a {
 				&:hover {
-					background-color: @card-hover-bgColor;
+					text-decoration: none;
 				}
 
-				h4 {
+				li {
+					margin: 20px 0;
+					padding: 10px 15px;
+					color: @card-text-color;
+
+					&:hover {
+						background-color: @card-hover-bgColor;
+					}
+
+					h4 {
+						margin: 0;
+					}
+
+					span {
+						font-style: italic;
+					}
+				}
+			}
+		}
+
+		.quiz {
+			.question-card {
+				border: 1px solid @card-border-color;
+				border-radius: 10px 10px 0 0;
+				margin: 15px 0;
+
+				.title {
 					margin: 0;
+					padding: 15px 10px;
 				}
 
-				span {
-					font-style: italic;
+				.choice-row {
+					background-color: @choice-background-color;
+					color: @choice-color;
+					padding: 15px;
+					border-top: 1px solid @card-border-color;
+					cursor: pointer;
+
+					&:hover, &.active {
+						background-color: @white;
+						color: @choice-color-hover;
+					}
+				}
+
+				.answer-status {
+					color: @white;
+					padding: 15px;
+
+					span {
+						color: @white;
+						font-weight: 700;
+					}
+
+					&.correct {
+						background-color: @correct-answer-background;
+					}
+
+					&.wrong {
+						background-color: @wrong-answer-background;
+					}
 				}
 			}
-		}
-	}
 
-	.question-card {
-		border: 1px solid @card-border-color;
-		border-radius: 10px 10px 0 0;
-		margin: 15px 0;
-
-		.title {
-			margin: 0;
-			padding: 15px 10px;
-		}
-
-		.choice-row {
-			background-color: @choice-background-color;
-			color: @choice-color;
-			padding: 15px;
-			border-top: 1px solid @card-border-color;
-			cursor: pointer;
-
-			&:hover, &.active {
-				background-color: @white;
-				color: @choice-color-hover;
-			}
-		}
-
-		.answer-status {
-			color: @white;
-			padding: 15px;
-
-			span {
+			.nextQuestion {
+				background-color: @nextQuestion-bg-color;
 				color: @white;
-				font-weight: 700;
-			}
+				border: none;
+				padding: 8px;
+				border-radius: 3px;
 
-			&.correct {
-				background-color: @correct-answer-background;
-			}
-
-			&.wrong {
-				background-color: @wrong-answer-background;
-			}
-		}
-	}
-
-	form {
-		input, textarea {
-			&.ng-invalid.ng-touched {
-				border: 1px solid @form-error-text-color;
+				&:disabled {
+					background-color: @nextQuestion-bg-color-disabled;
+				}
 			}
 		}
 
-		.form-error {
-			color: @form-error-text-color;
-			font-family: Verdana;
+		form {
+			input, textarea {
+				&.ng-invalid.ng-touched {
+					border: 1px solid @form-error-text-color;
+				}
+			}
+
+			.form-error {
+				color: @form-error-text-color;
+				font-family: Verdana;
+			}
+		}
+
+		pre {
+			margin-top: 20px;
 		}
 	}
 }

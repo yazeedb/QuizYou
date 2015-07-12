@@ -1,60 +1,76 @@
-.container-fluid ul.quizzes a:hover {
+.container-fullwidth .main {
+  padding: 0 15px;
+}
+.container-fullwidth .main ul.quizzes a:hover {
   text-decoration: none;
 }
-.container-fluid ul.quizzes a li {
+.container-fullwidth .main ul.quizzes a li {
   margin: 20px 0;
   padding: 10px 15px;
   color: #000000;
 }
-.container-fluid ul.quizzes a li:hover {
+.container-fullwidth .main ul.quizzes a li:hover {
   background-color: #f5f5f5;
 }
-.container-fluid ul.quizzes a li h4 {
+.container-fullwidth .main ul.quizzes a li h4 {
   margin: 0;
 }
-.container-fluid ul.quizzes a li span {
+.container-fullwidth .main ul.quizzes a li span {
   font-style: italic;
 }
-.container-fluid .question-card {
+.container-fullwidth .main .quiz .question-card {
   border: 1px solid #dddddd;
   border-radius: 10px 10px 0 0;
   margin: 15px 0;
 }
-.container-fluid .question-card .title {
+.container-fullwidth .main .quiz .question-card .title {
   margin: 0;
   padding: 15px 10px;
 }
-.container-fluid .question-card .choice-row {
+.container-fullwidth .main .quiz .question-card .choice-row {
   background-color: #fafafa;
   color: #a0a7ad;
   padding: 15px;
   border-top: 1px solid #dddddd;
   cursor: pointer;
 }
-.container-fluid .question-card .choice-row:hover,
-.container-fluid .question-card .choice-row.active {
+.container-fullwidth .main .quiz .question-card .choice-row:hover,
+.container-fullwidth .main .quiz .question-card .choice-row.active {
   background-color: #ffffff;
   color: #595c5e;
 }
-.container-fluid .question-card .answer-status {
+.container-fullwidth .main .quiz .question-card .answer-status {
   color: #ffffff;
   padding: 15px;
 }
-.container-fluid .question-card .answer-status span {
+.container-fullwidth .main .quiz .question-card .answer-status span {
   color: #ffffff;
   font-weight: 700;
 }
-.container-fluid .question-card .answer-status.correct {
+.container-fullwidth .main .quiz .question-card .answer-status.correct {
   background-color: #3cba61;
 }
-.container-fluid .question-card .answer-status.wrong {
+.container-fullwidth .main .quiz .question-card .answer-status.wrong {
   background-color: #ee5a5a;
 }
-.container-fluid form input.ng-invalid.ng-touched,
-.container-fluid form textarea.ng-invalid.ng-touched {
+.container-fullwidth .main .quiz .nextQuestion {
+  background-color: #5cb4e7;
+  color: #ffffff;
+  border: none;
+  padding: 8px;
+  border-radius: 3px;
+}
+.container-fullwidth .main .quiz .nextQuestion:disabled {
+  background-color: #96cde6;
+}
+.container-fullwidth .main form input.ng-invalid.ng-touched,
+.container-fullwidth .main form textarea.ng-invalid.ng-touched {
   border: 1px solid #dd1e31;
 }
-.container-fluid form .form-error {
+.container-fullwidth .main form .form-error {
   color: #dd1e31;
   font-family: Verdana;
+}
+.container-fullwidth .main pre {
+  margin-top: 20px;
 }

@@ -68,7 +68,6 @@ quizYou.controller('playQuizController', ['$state', 'quizAPIService', 'playQuizS
 
 	//If successful, assign self.quiz to the incoming data
 	getOneQuiz.success(function (data, status) {
-		console.log(data);
 		self.quiz = data;
 	})
 	//Otherwise, return the error

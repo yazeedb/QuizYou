@@ -7,3 +7,10 @@
 		</li>	
 	</a>
 </ul>
+
+<div class="no-quizzes" ng-if="!quizzesCtrl.quizzes.length">
+	<h3>No quizzes have been found</h3>
+	<h4>
+		How about <a href="#/create">creating one?</a>
+	</h4>
+</div>
