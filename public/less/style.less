@@ -23,32 +23,33 @@
 
 html, body, .container-fullwidth {
 	height: 100%;
+	background: @body-bg-color;
 }
 .container-fullwidth {
-	background-color: @body-bg-color;
+	font-family: 'Oxygen', sans-serif;
+		font-size: 18px;
+
+	a {
+		text-decoration: none;
+	}
 
 	nav {
 		background-color: @white;
 		border-color: @card-border-color;
 		border-radius: 0;
-
-		ul.nav {
-			&:visited {
-				background-color: @body-bg-color;
-			}
-		}
 	}
 
 	.main {
 		padding: 0 15px;
 
 		ul.quizzes {
+			width: 40%;
+
 			a {
 				text-decoration: none;
 
 				li {
-					width: 40%;
-					height: 100px;
+					height: 105px;
 					color: @card-text-color;
 					margin: 20px 0;
 					padding: 10px 15px;
@@ -61,16 +62,19 @@ html, body, .container-fullwidth {
 					.quizTitle {
 						margin: 0;
 						color: @card-title-color;
+						margin-bottom: 5px;
 					}
 
 					.quizDesc {
 						color: @card-desc-color;
+						font-size: 16px;
 					}
 
 					.quizAuthor {
 						color: @card-author-color;
 						font-style: italic;
-						line-height: 50px;
+						line-height: 40px;
+						font-size: 16px;
 					}
 				}
 			}
@@ -78,11 +82,15 @@ html, body, .container-fullwidth {
 
 		.quiz {
 			.question-card {
+				background-color: @white;
 				border: 1px solid @card-border-color;
-				border-radius: 10px 10px 0 0;
+				border-radius: 3px;
 				margin: 15px 0;
 
 				.title {
+					font-size: 20px;
+					font-family: sans-serif;
+					font-weight: 600;
 					margin: 0;
 					padding: 15px 10px;
 
@@ -99,6 +107,16 @@ html, body, .container-fullwidth {
 						background-color: @wrong-answer-background;
 						color: @white;
 					}
+				}
+
+				.box-action-text {
+					background-color: #f3f5f6;
+					font-size: 14px;
+					font-family: monospace;
+					color: #657380;
+					border-top: 1px solid @card-border-color;
+					margin-bottom: 0;
+					padding: 15px;
 				}
 
 				.choice-row {

@@ -2,27 +2,31 @@ html,
 body,
 .container-fullwidth {
   height: 100%;
+  background: #f5f7fb;
 }
 .container-fullwidth {
-  background-color: #f5f7fb;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 18px;
+}
+.container-fullwidth a {
+  text-decoration: none;
 }
 .container-fullwidth nav {
   background-color: #ffffff;
   border-color: #e3e6ec;
   border-radius: 0;
 }
-.container-fullwidth nav ul.nav:visited {
-  background-color: #f5f7fb;
-}
 .container-fullwidth .main {
   padding: 0 15px;
+}
+.container-fullwidth .main ul.quizzes {
+  width: 40%;
 }
 .container-fullwidth .main ul.quizzes a {
   text-decoration: none;
 }
 .container-fullwidth .main ul.quizzes a li {
-  width: 40%;
-  height: 100px;
+  height: 105px;
   color: #000000;
   margin: 20px 0;
   padding: 10px 15px;
@@ -34,21 +38,28 @@ body,
 .container-fullwidth .main ul.quizzes a li .quizTitle {
   margin: 0;
   color: #22c1e8;
+  margin-bottom: 5px;
 }
 .container-fullwidth .main ul.quizzes a li .quizDesc {
   color: gray;
+  font-size: 16px;
 }
 .container-fullwidth .main ul.quizzes a li .quizAuthor {
   color: silver;
   font-style: italic;
-  line-height: 50px;
+  line-height: 40px;
+  font-size: 16px;
 }
 .container-fullwidth .main .quiz .question-card {
+  background-color: #ffffff;
   border: 1px solid #e3e6ec;
-  border-radius: 10px 10px 0 0;
+  border-radius: 3px;
   margin: 15px 0;
 }
 .container-fullwidth .main .quiz .question-card .title {
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: 600;
   margin: 0;
   padding: 15px 10px;
 }
@@ -62,6 +73,15 @@ body,
 .container-fullwidth .main .quiz .question-card .title.incorrect {
   background-color: #ff7b7b;
   color: #ffffff;
+}
+.container-fullwidth .main .quiz .question-card .box-action-text {
+  background-color: #f3f5f6;
+  font-size: 14px;
+  font-family: monospace;
+  color: #657380;
+  border-top: 1px solid #e3e6ec;
+  margin-bottom: 0;
+  padding: 15px;
 }
 .container-fullwidth .main .quiz .question-card .choice-row {
   padding: 15px;
