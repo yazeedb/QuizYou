@@ -1,24 +1,15 @@
 <div class="question-card">
-	<h4 class="title">{{ pqCtrl.quiz.questions[pqCtrl.currentQ].question }}</h4>
+	<h4 class="title">{{ pqCtrl.quiz.questions[pqCtrl.currentQuestionIndex].question }}</h4>
 
-	<div class="choice-card" ng-repeat="choice in pqCtrl.quiz.questions[pqCtrl.currentQ].choices track by $index">
-		{{choice}}
+	<div class="choice-row" ng-repeat="choice in pqCtrl.quiz.questions[pqCtrl.currentQuestionIndex].choices track by $index" ng-click="pqCtrl.checkAnswer($index)">
+		{{ choice }}
 	</div>
 
-
+	<button class="nextQuestion" ng-click="pqCtrl.nextQuestion()">Next question</button>
 </div>
 
-<!-- <form id="questionForm">
-	<div class="question-card">
-		<h4 class="title">{{ quizCtrl.questions[quizCtrl.id].question }}</h4>
+<pre>{{ pqCtrl.quiz.questions }}</pre>
+<pre>Total questions: {{ pqCtrl.quiz.questions.length }}</pre>
 
-		<div class="answer-status correct" ng-if="quizCtrl.userCanAdvance"><span>&#x2714; Correct!</span> Good job</div>
-		<div class="answer-status wrong" ng-if="quizCtrl.wrongAnswer"><span>&#x2716; Sorry!</span> Try again</div>
-
-		<div class="choice" id="{{ choice }}" ng-repeat="choice in quizCtrl.questions[quizCtrl.id].choices track by $index" ng-click="quizCtrl.checkAnswers(choice)" ng-class="{ 'active': quizCtrl.userCanAdvance && choice === quizCtrl.questions[quizCtrl.id].correctAnswer}">
-			{{ choice }}
-		</div>
-	</div>
-</form>
-
-<button class="nextQuestion" ng-if="quizCtrl.userCanAdvance" ng-click="quizCtrl.nextQuestion()">Next question</button> -->
+<!-- <div class="answer-status correct" ng-if="quizCtrl.userCanAdvance"><span>&#x2714; Correct!</span> Good job</div>
+<div class="answer-status wrong" ng-if="quizCtrl.wrongAnswer"><span>&#x2716; Sorry!</span> Try again</div> -->

@@ -1,5 +1,5 @@
 //Create a quiz
-quizYou.controller('createQuizController', ['$http', '$state', '$location', 'quizCreationService', 'quizAPIService', 'validateFormService', function ($http, $state, $location, quizCreationService, quizAPIService, validateFormService) {
+quizYou.controller('createQuizController', ['$http', '$state', '$location', 'quizCreationService', 'quizAPIService', function ($http, $state, $location, quizCreationService, quizAPIService) {
 	var self = this;
 
 	//Create a new quiz object. This will hold all final quiz data, and will be sent to the database at the end
@@ -17,8 +17,6 @@ quizYou.controller('createQuizController', ['$http', '$state', '$location', 'qui
 		
 		self.current = quizCreationService.appendToQuiz(self.current, self.quiz);
 	};
-
-	self.validateQuiz = validateFormService.validateQuiz;
 
 	//Upload quiz to database
 	self.uploadQuiz = function () {
@@ -57,15 +55,20 @@ quizYou.controller('quizzesController', ['quizAPIService', function (quizAPIServ
 	});
 }]);
 
-quizYou.controller('playQuizController', ['$state', 'quizAPIService', function ($state, quizAPIService) {
+quizYou.controller('playQuizController', ['$state', 'quizAPIService', 'playQuizService',function ($state, quizAPIService, playQuizService) {
 	var self = this;
 
+	//Current question to be displayed
+	self.currentQuestionIndex = 0;
+	//Lets us know if the user can move on to the next question
+	self.userCanAdvance = false;
+
 	//Find the requested quiz in the database
-	//This will search using the quiz's _id, found in the $state.params object
 	var getOneQuiz = quizAPIService.getOneQuiz($state.params._id);
 
 	//If successful, assign self.quiz to the incoming data
 	getOneQuiz.success(function (data, status) {
+		console.log(data);
 		self.quiz = data;
 	})
 	//Otherwise, return the error
@@ -73,5 +76,25 @@ quizYou.controller('playQuizController', ['$state', 'quizAPIService', function (
 		return error;
 	});
 
-	self.currentQ = 0;
+	self.checkAnswer = function (choiceIndex) {
+		//Current question being checked
+		var currentQ = self.quiz.questions[self.currentQuestionIndex];
+
+		//The choice submitted by the user
+		var submittedAnswer = currentQ.choices[choiceIndex];
+		//Current question's correct answer
+		var correctAnswer = currentQ.correctAnswer;
+
+		//If submittedAnswer is correct, self.userCanAdvance will evaluate to true, and the user can move on
+		self.userCanAdvance = playQuizService.checkAnswer(submittedAnswer, correctAnswer);
+	};
+
+	self.nextQuestion = function () {
+		if (self.userCanAdvance) {
+			self.userCanAdvance = false;
+			self.currentQuestionIndex++;
+		} else {
+			console.log('nope');
+		}
+	};
 }]);

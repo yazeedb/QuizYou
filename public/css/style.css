@@ -24,15 +24,15 @@
   margin: 0;
   padding: 15px 10px;
 }
-.container-fluid .question-card .choice-card {
+.container-fluid .question-card .choice-row {
   background-color: #fafafa;
   color: #a0a7ad;
   padding: 15px;
   border-top: 1px solid #dddddd;
   cursor: pointer;
 }
-.container-fluid .question-card .choice-card:hover,
-.container-fluid .question-card .choice-card.active {
+.container-fluid .question-card .choice-row:hover,
+.container-fluid .question-card .choice-row.active {
   background-color: #ffffff;
   color: #595c5e;
 }
