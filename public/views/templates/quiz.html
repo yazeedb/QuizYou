@@ -1,14 +1,10 @@
 <div class="quiz">
 	<div class="question-card">
-		<h4 class="title" ng-class="{ 'correct': pqCtrl.userCanAdvance, 'incorrect': pqCtrl.wrongAnswer }">
+		<h4 class="title">
 			{{ pqCtrl.quiz.questions[pqCtrl.currentQuestionIndex].question }}
-			<span class="answer-status" ng-show="pqCtrl.userCanAdvance">&#x2714;  Correct!</span>
-			<span class="answer-status" ng-show="pqCtrl.wrongAnswer">&#x2716; Try again!</span>
+			<span class="answer-status correct" ng-show="pqCtrl.userCanAdvance">&#x2714; Correct: {{ pqCtrl.quiz.questions[pqCtrl.currentQuestionIndex].correctAnswer }}</span>
+			<span class="answer-status incorrect" ng-show="pqCtrl.wrongAnswer">&#x2716; Try again!</span>
 		</h4>
-
-		<div class="box-action-text">
-			<p>Select the correct answer below</p>
-		</div>
 
 		<div class="choice-row" ng-repeat="choice in pqCtrl.quiz.questions[pqCtrl.currentQuestionIndex].choices track by $index" ng-click="pqCtrl.checkAnswer($index)">
 			{{ choice }}

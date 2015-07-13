@@ -66,22 +66,11 @@ body,
 .container-fullwidth .main .quiz .question-card .title .answer-status {
   margin-left: 12px;
 }
-.container-fullwidth .main .quiz .question-card .title.correct {
-  background-color: #6ace87;
-  color: #ffffff;
+.container-fullwidth .main .quiz .question-card .title .answer-status.correct {
+  color: #41c367;
 }
-.container-fullwidth .main .quiz .question-card .title.incorrect {
-  background-color: #ff7b7b;
-  color: #ffffff;
-}
-.container-fullwidth .main .quiz .question-card .box-action-text {
-  background-color: #f3f5f6;
-  font-size: 14px;
-  font-family: monospace;
-  color: #657380;
-  border-top: 1px solid #e3e6ec;
-  margin-bottom: 0;
-  padding: 15px;
+.container-fullwidth .main .quiz .question-card .title .answer-status.incorrect {
+  color: #f06464;
 }
 .container-fullwidth .main .quiz .question-card .choice-row {
   padding: 15px;
