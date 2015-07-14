@@ -29,6 +29,17 @@ body,
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  visibility: hidden;
+  opacity: 0;
+}
+.container-fullwidth .main .quiz-modal-background.fadein {
+  visibility: visible;
+  opacity: 1;
 }
 .container-fullwidth .main .quiz-modal {
   width: 60%;

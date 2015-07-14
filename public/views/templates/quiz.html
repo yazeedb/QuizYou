@@ -1,7 +1,6 @@
-<div class="quiz-modal-background">
-	<div class="quiz-modal correctAnswer" ng-show-"pqCtrl.userCanAdvance">
-		<!-- <h1>{{ pqCtrl.positiveFeedback }}</h1> -->
-		<h1>Well done!</h1>
+<div class="quiz-modal-background" ng-class="{ 'fadein': pqCtrl.userCanAdvance }">
+	<div class="quiz-modal correctAnswer" ng-show="pqCtrl.userCanAdvance">
+		<h1>{{ pqCtrl.positiveFeedback }}</h1>
 	</div>
 </div>
 

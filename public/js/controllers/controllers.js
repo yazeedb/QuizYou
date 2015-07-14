@@ -55,7 +55,7 @@ quizYou.controller('quizzesController', ['quizAPIService', function (quizAPIServ
 	});
 }]);
 
-quizYou.controller('playQuizController', ['$state', 'quizAPIService', 'playQuizService',function ($state, quizAPIService, playQuizService) {
+quizYou.controller('playQuizController', ['$state', '$timeout', 'quizAPIService', 'playQuizService',function ($state, $timeout, quizAPIService, playQuizService) {
 	var self = this;
 
 	//Current question to be displayed
@@ -95,7 +95,22 @@ quizYou.controller('playQuizController', ['$state', 'quizAPIService', 'playQuizS
 		self.wrongAnswer = !self.userCanAdvance;
 
 		if (self.userCanAdvance) {
+			var quizModalBg = angular.element('.quiz-modal-background');
+
+			$timeout(function () {
+
+				quizModalBg.removeClass('fadein');
+			}, 2000);
 			self.positiveFeedback = playQuizService.giveAnswerFeedback('positive');
+		} else {
+			var shakingIncorrect = angular.element('.answer-status.incorrect'),
+				shakingClass = 'shake shake-vertical shake-constant';
+
+			shakingIncorrect.addClass(shakingClass);
+
+			$timeout(function () {
+				shakingIncorrect.removeClass(shakingClass);
+			}, 500);
 		}
 	};
 
