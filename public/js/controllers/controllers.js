@@ -76,6 +76,10 @@ quizYou.controller('playQuizController', ['$state', 'quizAPIService', 'playQuizS
 	});
 
 	self.checkAnswer = function (choiceIndex) {
+		//If the user has already given the correct answer, why bother checking..?
+		if (self.userCanAdvance)
+			return false;
+
 		//Current question being checked
 		var currentQ = self.quiz.questions[self.currentQuestionIndex];
 
@@ -87,7 +91,12 @@ quizYou.controller('playQuizController', ['$state', 'quizAPIService', 'playQuizS
 		//If submittedAnswer is correct, self.userCanAdvance will evaluate to true, and the user can move on
 		self.userCanAdvance = playQuizService.checkAnswer(submittedAnswer, correctAnswer);
 
+		//self.wrongAnswer is being set to the opposite of self.userCanAdvance. So if one is true, the other is false
 		self.wrongAnswer = !self.userCanAdvance;
+
+		if (self.userCanAdvance) {
+			self.positiveFeedback = playQuizService.giveAnswerFeedback('positive');
+		}
 	};
 
 	self.nextQuestion = function () {
