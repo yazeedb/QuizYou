@@ -1,3 +1,11 @@
+//Sign a user up
+quizYou.controller('signupController', ['signupUserService', function (signupUserService) {
+	var self = this;
+
+	self.newUser = {};
+	self.signupUser = signupUserService.signupUser;
+}]);
+
 //Create a quiz
 quizYou.controller('createQuizController', ['$http', '$state', '$location', 'quizCreationService', 'quizAPIService', function ($http, $state, $location, quizCreationService, quizAPIService) {
 	var self = this;

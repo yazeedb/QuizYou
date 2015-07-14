@@ -21,6 +21,10 @@ body,
 }
 .container-fullwidth .main {
   padding: 0 15px;
+  /*pre {
+			margin-top: 90px;
+			clear: both;
+		}*/
 }
 .container-fullwidth .main .quiz-modal-background {
   position: fixed;
@@ -139,8 +143,4 @@ body,
 .container-fullwidth .main form .form-error {
   color: #dd1e31;
   font-family: Verdana;
-}
-.container-fullwidth .main pre {
-  margin-top: 90px;
-  clear: both;
 }

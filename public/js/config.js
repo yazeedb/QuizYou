@@ -6,6 +6,18 @@ quizYou.config(['$urlRouterProvider', '$stateProvider', function ($urlRouterProv
 		templateUrl: './views/templates/home.html'
 	})
 
+	.state('signup', {
+		url: '/signup',
+		templateUrl: './views/templates/signup.html',
+		controller: 'signupController',
+		controllerAs: 'signupCtrl'
+	})
+
+	.state('login', {
+		url: '/login',
+		templateUrl: './views/templates/login.html'
+	})
+
 	.state('create', {
 		abstract: true,
 		url: '/create',

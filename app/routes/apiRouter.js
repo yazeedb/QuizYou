@@ -2,6 +2,11 @@ module.exports = function (app, express) {
 	//Router for our API
 	var api = express.Router();
 
+	api.post('/signup', function (req, res) {
+		var userToDb = require('../controllers/userToDb.js');
+		userToDb(req.body.user);
+	});
+
 	api.route('/quizzes')
 		//Get all quizzes from the database
 		.get(function (req, res) {
@@ -17,7 +22,6 @@ module.exports = function (app, express) {
 		//Upload a quiz to the database
 		.post(function (req, res) {
 			var quizToDb = require('../controllers/quizToDb.js');
-
 			quizToDb(req.body.quiz);
 		});
 

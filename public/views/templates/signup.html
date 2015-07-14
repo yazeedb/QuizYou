@@ -1,0 +1,23 @@
+<h1>Sign up</h1>
+
+<form method="post" name="form" ng-submit="signupCtrl.signupUser(signupCtrl.newUser)" novalidate>
+	<div class="form-group">
+		<label for="fullname">Full Name</label>
+		<input type="text" name="fullname" id="fullname" class="form-control" ng-model="signupCtrl.newUser.fullname" required>
+		<span class="form-error" ng-show="form.fullname.$touched && form.fullname.$invalid">Please enter your full name</span>
+	</div>
+
+	<div class="form-group">
+		<label for="email">Email</label>
+		<input type="email" name="email" id="email" class="form-control" ng-model="signupCtrl.newUser.email" required>
+		<span class="form-error" ng-show="form.email.$touched && form.email.$invalid">Please enter your email</span>
+	</div>
+
+	<div class="form-group">
+		<label for="password">Password</label>
+		<input type="password" name="password" id="password" class="form-control" ng-model="signupCtrl.newUser.password" required>
+		<span class="form-error" ng-show="form.password.$touched && form.password.$invalid">Please enter your password</span>
+	</div>
+
+	<button type="submit" class="btn btn-success" ng-disabled="form.$invalid">Sign up</button>
+</form>

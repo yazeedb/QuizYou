@@ -3,11 +3,6 @@ function quizToDb (newQuiz) {
 		quiz = new Quiz(),
 		key;
 
-	/*quiz.author = newQuiz.author;
-	quiz.title = newQuiz.title;
-	quiz.desc = newQuiz.desc;
-	quiz.questions = newQuiz.questions;*/
-
 	for(key in newQuiz) {
 		quiz[key] = newQuiz[key];
 	}
